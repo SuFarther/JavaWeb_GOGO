@@ -23,12 +23,12 @@ public class TwoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int dumplings_money = 30;
-        int noodles_money = 20;
-        int caprice_money = 15;
+        int dumplingsMoney = 30;
+        int noodlesMoney = 20;
+        int capriceMoney = 15;
         int money = 0,consumption = 0,balance = 0;
         String food,userName=null;
-        Cookie cookiesArray[]=null;
+        Cookie[] cookiesArray=null;
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
         Cookie newCard = null;
@@ -49,29 +49,29 @@ public class TwoServlet extends HttpServlet {
             }else  if("money".equals(key)){
                 money = Integer.valueOf(value);
                 if("饺子".equals(food)){
-                    if(dumplings_money > money){
+                    if(dumplingsMoney > money){
                         out.print("用户 "+userName+" 余额不足,请充值");
                     }else {
-                        newCard =  new Cookie("money",(money-dumplings_money)+"");
+                        newCard =  new Cookie("money",(money-dumplingsMoney)+"");
                         newCard.setMaxAge(120);
-                        consumption = dumplings_money;
-                        balance = money - dumplings_money;
+                        consumption = dumplingsMoney;
+                        balance = money - dumplingsMoney;
                     }
                 }else  if("面条".equals(food)){
-                    if(noodles_money > money){
+                    if(noodlesMoney > money){
                         out.print("用户 "+userName+" 余额不足,请充值");
                     }else {
-                        newCard =  new Cookie("money",(money-noodles_money)+"");
-                        consumption = noodles_money;
-                        balance = money - noodles_money;
+                        newCard =  new Cookie("money",(money-noodlesMoney)+"");
+                        consumption = noodlesMoney;
+                        balance = money - noodlesMoney;
                     }
                 }else  if("盖饭".equals(food)){
-                    if(caprice_money > money){
+                    if(capriceMoney > money){
                         out.print("用户 "+userName+" 余额不足,请充值");
                     }else {
-                        newCard =  new Cookie("money",(money-caprice_money)+"");
-                        consumption = caprice_money;
-                        balance = money - caprice_money;
+                        newCard =  new Cookie("money",(money-capriceMoney)+"");
+                        consumption = capriceMoney;
+                        balance = money - capriceMoney;
                     }
                 }
             }
