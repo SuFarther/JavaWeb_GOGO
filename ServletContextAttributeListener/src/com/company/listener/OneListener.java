@@ -14,13 +14,13 @@ import javax.servlet.ServletContextAttributeListener;
  *
  * 		 2）监听事件处理方法：
  *
- * 		                 public void contextAdd():在全局作用域对象添加共享数据
+ * 		         public void contextAdd():在全局作用域对象添加共享数据
  * 				 public void contextReplaced():在全局作用域对象更新共享数据
  * 				 public void contextRemove():在全局作用域对象删除共享数据
  *
  *      6.全局作用域对象共享数据变化时刻
  *
- *                                  ServletContext application = request.getServletContext();
+ *           ServletContext application = request.getServletContext();
  *
  * 				 application.setAttribute("key1",100); //新增共享数据
  *
