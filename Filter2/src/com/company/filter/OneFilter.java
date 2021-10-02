@@ -13,7 +13,14 @@ import java.io.IOException;
  * @createTime 2021年10月02日 16:26:26
  */
 public class OneFilter implements Filter {
-
+    /**
+     * 通知拦截请求对象,使用UTF-8字符集对当前请求体信息进行一次重新编译
+     * @param servletRequest
+     * @param servletResponse
+     * @param filterChain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         servletRequest.setCharacterEncoding("utf-8");
