@@ -24,6 +24,7 @@
         <filter-class>com.company.filter.OneFilter</filter-class>
     </filter>
     <filter-mapping>
+        <!--通知tomcat在调用所有资源文件之前都需要调用-->
         <filter-name>OneFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
