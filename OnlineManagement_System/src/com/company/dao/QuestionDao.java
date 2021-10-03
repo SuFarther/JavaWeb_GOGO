@@ -153,4 +153,34 @@ public class QuestionDao {
         }
         return result;
     }
+
+    /**
+     * 参加考试
+     * @return findRand
+     */
+    public List findRand(){
+        String sql="select * from question order by rand() limit 0,4";
+        PreparedStatement ps = util.createStatement(sql);
+        ResultSet rs = null;
+        List list = new ArrayList();
+        try {
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Integer quesitonId = rs.getInt("questionId");
+                String title = rs.getString("title");
+                String optionA=rs.getString("optionA");
+                String optionB=rs.getString("optionB");
+                String optionC=rs.getString("optionC");
+                String optionD=rs.getString("optionD");
+                String answer = rs.getString("answer");
+                Question question = new Question(quesitonId, title, optionA, optionB, optionC, optionD, answer);
+                list.add(question);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            util.close(rs);
+        }
+        return list;
+    }
 }
