@@ -47,7 +47,7 @@ public class UserFindServlet extends HttpServlet {
             out.print("<td>"+users.getPassword()+"</td>");
             out.print("<td>"+users.getSex()+"</td>");
             out.print("<td>"+users.getEmail()+"</td>");
-            out.print("<td><a href='/Online/user/delete?userId="+users.getUserId()+"'>删除用户</a><td>");
+            out.print("<td><a href='/Online/user/delete?userId="+users.getUserId()+"'>删除用户</a></td>");
             out.print("<tr/>");
         }
         out.print("<table/>");
