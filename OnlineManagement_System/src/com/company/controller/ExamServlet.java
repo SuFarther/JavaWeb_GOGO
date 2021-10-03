@@ -37,6 +37,6 @@ public class ExamServlet extends HttpServlet {
         //4.将分数写入到request中，作为共享数据
         request.setAttribute("info", "本次考试成绩: "+score);
         //5.请求转发调用jsp将用户本次考试分数写入到响应体
-        request.getRequestDispatcher("info.jsp").forward(request, response);
+        request.getRequestDispatcher("question_info.jsp").forward(request, response);
     }
 }
